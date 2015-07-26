@@ -144,7 +144,8 @@ angular.module('oi.multiselect')
                         return;
                     }
 
-                    if (event.type === 'click' && angular.element(event.target).scope() === this) { //not click on add or remove buttons
+                   if ((event.type === 'click' || event.type === 'touchend') && angular.element(event.target).scope() === this) { //not click on add or remove buttons
+     
                         if (scope.isOpen && !scope.query) {
                             resetMatches();
                         } else {
